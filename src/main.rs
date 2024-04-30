@@ -54,7 +54,10 @@ impl Event {
                 (format!("{from}"), format!("{to}"), text)
             }
         };
+        #[cfg(not(test))]
         let now = Utc::now().format("%Y%m%dT%H%M%SZ");
+        #[cfg(test)]
+        let now = "20000101T000000Z";
 
         format!(
             "BEGIN:VEVENT\n\
