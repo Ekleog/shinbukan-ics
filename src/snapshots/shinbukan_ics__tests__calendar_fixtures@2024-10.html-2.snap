@@ -1,0 +1,21 @@
+---
+source: src/main.rs
+expression: result.events_as_ics()
+input_file: src/fixtures/2024-10.html
+---
+BEGIN:VEVENT
+UID:3485295547708995777@shinbukan-ics
+DTSTAMP:20240430T153649Z
+DTSTART:20241006T000000Z
+DTEND:20241006T080000Z
+SUMMARY:鳴尾浜 柔道場 本稽古
+URL:http://brionac.s17.xrea.com/schedule/homepage/homepage/calendar/2024/202410.html
+END:VEVENT
+BEGIN:VEVENT
+UID:8626147013184437986@shinbukan-ics
+DTSTAMP:20240430T153649Z
+DTSTART:20241020T040000Z
+DTEND:20241020T080000Z
+SUMMARY:鳴尾浜 柔道場/自主稽古
+URL:http://brionac.s17.xrea.com/schedule/homepage/homepage/calendar/2024/202410.html
+END:VEVENT

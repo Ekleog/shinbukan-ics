@@ -1,0 +1,30 @@
+---
+source: src/main.rs
+expression: result
+input_file: src/fixtures/2025-01.html
+---
+MonthResult {
+    year: 2025,
+    month: 1,
+    events: [
+        Timed {
+            day: 5,
+            from: 13,
+            to: 17,
+            text: "鳴尾浜 柔道場/自主稽古",
+        },
+        Timed {
+            day: 12,
+            from: 13,
+            to: 17,
+            text: "鳴尾浜 柔道場/自主稽古",
+        },
+        Timed {
+            day: 19,
+            from: 9,
+            to: 17,
+            text: "鳴尾浜 柔道場 本稽古",
+        },
+    ],
+    errors: [],
+}

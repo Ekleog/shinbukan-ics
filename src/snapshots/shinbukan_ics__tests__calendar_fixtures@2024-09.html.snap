@@ -1,0 +1,62 @@
+---
+source: src/main.rs
+expression: result
+input_file: src/fixtures/2024-09.html
+---
+MonthResult {
+    year: 2024,
+    month: 9,
+    events: [
+        Timed {
+            day: 1,
+            from: 13,
+            to: 17,
+            text: "鳴尾浜 柔道場/自主稽古",
+        },
+        Timed {
+            day: 8,
+            from: 9,
+            to: 17,
+            text: "鳴尾浜 柔道場 本稽古",
+        },
+        FullDay {
+            day: 8,
+            text: "（仮）",
+        },
+        FullDay {
+            day: 13,
+            text: "丹波合宿",
+        },
+        FullDay {
+            day: 14,
+            text: "丹波合宿",
+        },
+        FullDay {
+            day: 15,
+            text: "丹波合宿",
+        },
+        Timed {
+            day: 15,
+            from: 13,
+            to: 17,
+            text: "鳴尾浜 柔道場/自主稽古（仮）",
+        },
+        FullDay {
+            day: 16,
+            text: "丹波合宿",
+        },
+        Timed {
+            day: 22,
+            from: 13,
+            to: 17,
+            text: "鳴尾浜 柔道場/自主稽古",
+        },
+        Timed {
+            day: 29,
+            from: 13,
+            to: 17,
+            text: "鳴尾浜 柔道場/自主稽古",
+        },
+    ],
+    errors: [],
+}

@@ -1,0 +1,140 @@
+---
+source: src/main.rs
+expression: result
+input_file: src/fixtures/2024-03.html
+---
+MonthResult {
+    year: 2024,
+    month: 3,
+    events: [
+        FullDay {
+            day: 1,
+            text: "合宿2日目",
+        },
+        FullDay {
+            day: 2,
+            text: "合宿３日目",
+        },
+        FullDay {
+            day: 3,
+            text: "合宿４日目",
+        },
+        Timed {
+            day: 3,
+            from: 13,
+            to: 17,
+            text: "鳴尾浜 柔道場/自主稽古",
+        },
+        FullDay {
+            day: 4,
+            text: "合宿５日目",
+        },
+        Timed {
+            day: 4,
+            from: 13,
+            to: 17,
+            text: "上板橋（自主稽古）",
+        },
+        FullDay {
+            day: 6,
+            text: "帰国",
+        },
+        Timed {
+            day: 7,
+            from: 15,
+            to: 17,
+            text: "戸田SC(3F)KJ",
+        },
+        Timed {
+            day: 9,
+            from: 13,
+            to: 15,
+            text: "戸田SC(2F)J",
+        },
+        Timed {
+            day: 10,
+            from: 15,
+            to: 17,
+            text: "大宮武道館(1F)KJ",
+        },
+        Timed {
+            day: 10,
+            from: 13,
+            to: 17,
+            text: "鳴尾浜 柔道場/自主稽古",
+        },
+        Timed {
+            day: 11,
+            from: 13,
+            to: 17,
+            text: "戸田SC(2F)KJ",
+        },
+        Timed {
+            day: 14,
+            from: 15,
+            to: 17,
+            text: "戸田SC(3F)IK",
+        },
+        Timed {
+            day: 17,
+            from: 9,
+            to: 17,
+            text: "鳴尾浜 柔道場 本稽古",
+        },
+        Timed {
+            day: 18,
+            from: 13,
+            to: 17,
+            text: "上板橋IJ",
+        },
+        Timed {
+            day: 21,
+            from: 17,
+            to: 19,
+            text: "大宮武道館(2F)J",
+        },
+        Timed {
+            day: 24,
+            from: 13,
+            to: 15,
+            text: "戸田SC(2F)IJ",
+        },
+        Timed {
+            day: 24,
+            from: 13,
+            to: 17,
+            text: "鳴尾浜 柔道場/自主稽古",
+        },
+        Timed {
+            day: 25,
+            from: 13,
+            to: 17,
+            text: "上板橋J",
+        },
+        Timed {
+            day: 28,
+            from: 17,
+            to: 19,
+            text: "戸田SC(2F)KJ",
+        },
+        Timed {
+            day: 30,
+            from: 13,
+            to: 15,
+            text: "大宮武道館(2F半面)IJ",
+        },
+        Timed {
+            day: 31,
+            from: 13,
+            to: 15,
+            text: "戸田SC(2F)KJ",
+        },
+        Timed {
+            day: 31,
+            from: 13,
+            to: 17,
+            text: "鳴尾浜 柔道場/自主稽古",
+        },
+    ],
+    errors: [],
+}

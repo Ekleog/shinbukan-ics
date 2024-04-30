@@ -1,0 +1,36 @@
+---
+source: src/main.rs
+expression: result
+input_file: src/fixtures/2024-08.html
+---
+MonthResult {
+    year: 2024,
+    month: 8,
+    events: [
+        Timed {
+            day: 4,
+            from: 13,
+            to: 17,
+            text: "鳴尾浜 柔道場/自主稽古",
+        },
+        Timed {
+            day: 11,
+            from: 13,
+            to: 17,
+            text: "鳴尾浜 柔道場/自主稽古",
+        },
+        Timed {
+            day: 18,
+            from: 13,
+            to: 17,
+            text: "鳴尾浜 柔道場/自主稽古",
+        },
+        Timed {
+            day: 25,
+            from: 9,
+            to: 17,
+            text: "鳴尾浜 柔道場 本稽古",
+        },
+    ],
+    errors: [],
+}

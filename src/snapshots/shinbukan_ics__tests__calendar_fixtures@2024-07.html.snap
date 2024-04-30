@@ -1,0 +1,120 @@
+---
+source: src/main.rs
+expression: result
+input_file: src/fixtures/2024-07.html
+---
+MonthResult {
+    year: 2024,
+    month: 7,
+    events: [
+        Timed {
+            day: 1,
+            from: 13,
+            to: 17,
+            text: "上板橋",
+        },
+        FullDay {
+            day: 2,
+            text: "モンバール合宿\u{3000}出発",
+        },
+        FullDay {
+            day: 3,
+            text: "合宿1日目",
+        },
+        FullDay {
+            day: 4,
+            text: "合宿２日目",
+        },
+        FullDay {
+            day: 5,
+            text: "合宿３日目",
+        },
+        FullDay {
+            day: 6,
+            text: "合宿４日目",
+        },
+        FullDay {
+            day: 7,
+            text: "合宿５日目",
+        },
+        Timed {
+            day: 7,
+            from: 13,
+            to: 17,
+            text: "丹波 柔道場/自主稽古",
+        },
+        FullDay {
+            day: 8,
+            text: "合宿６日目",
+        },
+        FullDay {
+            day: 10,
+            text: "帰国",
+        },
+        FullDay {
+            day: 12,
+            text: "北海道稽古会\u{3000}出発",
+        },
+        FullDay {
+            day: 13,
+            text: "稽古会１日目",
+        },
+        FullDay {
+            day: 14,
+            text: "稽古会２日目",
+        },
+        Timed {
+            day: 14,
+            from: 13,
+            to: 17,
+            text: "鳴尾浜 柔道場/自主稽古",
+        },
+        FullDay {
+            day: 15,
+            text: "稽古会３日目",
+        },
+        Timed {
+            day: 15,
+            from: 13,
+            to: 17,
+            text: "上板橋（自主稽古）",
+        },
+        Timed {
+            day: 18,
+            from: 15,
+            to: 17,
+            text: "大宮武道館(2F半面)",
+        },
+        Timed {
+            day: 20,
+            from: 13,
+            to: 15,
+            text: "大宮武道館(2F)",
+        },
+        Timed {
+            day: 21,
+            from: 13,
+            to: 17,
+            text: "鳴尾浜 柔道場/自主稽古",
+        },
+        Timed {
+            day: 22,
+            from: 13,
+            to: 17,
+            text: "上板橋",
+        },
+        Timed {
+            day: 28,
+            from: 9,
+            to: 17,
+            text: "鳴尾浜 柔道場 本稽古",
+        },
+        Timed {
+            day: 29,
+            from: 13,
+            to: 17,
+            text: "上板橋",
+        },
+    ],
+    errors: [],
+}
