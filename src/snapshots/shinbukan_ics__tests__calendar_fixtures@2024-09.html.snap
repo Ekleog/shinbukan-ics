@@ -9,14 +9,26 @@ MonthResult {
     events: [
         Timed {
             day: 1,
-            from: 13,
-            to: 17,
+            from: Time {
+                hours: 13,
+                minutes: 0,
+            },
+            to: Time {
+                hours: 17,
+                minutes: 0,
+            },
             text: "鳴尾浜 柔道場/自主稽古",
         },
         Timed {
             day: 8,
-            from: 9,
-            to: 17,
+            from: Time {
+                hours: 9,
+                minutes: 0,
+            },
+            to: Time {
+                hours: 17,
+                minutes: 0,
+            },
             text: "鳴尾浜 柔道場 本稽古",
         },
         FullDay {
@@ -37,8 +49,14 @@ MonthResult {
         },
         Timed {
             day: 15,
-            from: 13,
-            to: 17,
+            from: Time {
+                hours: 13,
+                minutes: 0,
+            },
+            to: Time {
+                hours: 17,
+                minutes: 0,
+            },
             text: "鳴尾浜 柔道場/自主稽古（仮）",
         },
         FullDay {
@@ -47,14 +65,26 @@ MonthResult {
         },
         Timed {
             day: 22,
-            from: 13,
-            to: 17,
+            from: Time {
+                hours: 13,
+                minutes: 0,
+            },
+            to: Time {
+                hours: 17,
+                minutes: 0,
+            },
             text: "鳴尾浜 柔道場/自主稽古",
         },
         Timed {
             day: 29,
-            from: 13,
-            to: 17,
+            from: Time {
+                hours: 13,
+                minutes: 0,
+            },
+            to: Time {
+                hours: 17,
+                minutes: 0,
+            },
             text: "鳴尾浜 柔道場/自主稽古",
         },
     ],

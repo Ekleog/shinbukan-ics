@@ -9,20 +9,38 @@ MonthResult {
     events: [
         Timed {
             day: 2,
-            from: 13,
-            to: 17,
+            from: Time {
+                hours: 13,
+                minutes: 0,
+            },
+            to: Time {
+                hours: 17,
+                minutes: 0,
+            },
             text: "鳴尾浜 柔道場/自主稽古",
         },
         Timed {
             day: 16,
-            from: 9,
-            to: 17,
+            from: Time {
+                hours: 9,
+                minutes: 0,
+            },
+            to: Time {
+                hours: 17,
+                minutes: 0,
+            },
             text: "鳴尾浜 柔道場 本稽古",
         },
         Timed {
             day: 30,
-            from: 13,
-            to: 17,
+            from: Time {
+                hours: 13,
+                minutes: 0,
+            },
+            to: Time {
+                hours: 17,
+                minutes: 0,
+            },
             text: "鳴尾浜 柔道場/自主稽古",
         },
     ],

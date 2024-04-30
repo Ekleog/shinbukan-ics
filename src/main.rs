@@ -7,11 +7,17 @@ use std::hash::{Hash, Hasher};
 const NUM_MONTHS: u32 = 15; // 2 months of "going back", plus one year, plus one month
 
 #[derive(Debug, Hash)]
+struct Time {
+    hours: usize,
+    minutes: usize,
+}
+
+#[derive(Debug, Hash)]
 enum Event {
     Timed {
         day: usize,
-        from: usize,
-        to: usize,
+        from: Time,
+        to: Time,
         text: String,
     },
     FullDay {
@@ -47,10 +53,12 @@ impl Event {
                 let year = year.try_into().unwrap();
                 let month = month.try_into().unwrap();
                 let day = (*day).try_into().unwrap();
-                let from = (*from).try_into().unwrap();
-                let to = (*to).try_into().unwrap();
-                let from = chrono_tz::Asia::Tokyo.with_ymd_and_hms(year, month, day, from, 0, 0).unwrap().with_timezone(&Utc).format("DTSTART:%Y%m%dT%H%M%SZ");
-                let to = chrono_tz::Asia::Tokyo.with_ymd_and_hms(year, month, day, to, 0, 0).unwrap().with_timezone(&Utc).format("DTEND:%Y%m%dT%H%M%SZ");
+                let from_hours = from.hours.try_into().unwrap();
+                let to_hours = to.hours.try_into().unwrap();
+                let from_mins = from.minutes.try_into().unwrap();
+                let to_mins = to.minutes.try_into().unwrap();
+                let from = chrono_tz::Asia::Tokyo.with_ymd_and_hms(year, month, day, from_hours, from_mins, 0).unwrap().with_timezone(&Utc).format("DTSTART:%Y%m%dT%H%M%SZ");
+                let to = chrono_tz::Asia::Tokyo.with_ymd_and_hms(year, month, day, to_hours, to_mins, 0).unwrap().with_timezone(&Utc).format("DTEND:%Y%m%dT%H%M%SZ");
                 (format!("{from}"), format!("{to}"), text)
             }
         };
@@ -90,13 +98,13 @@ impl MonthResult {
         }
     }
 
-    fn event(&mut self, day: usize, mut from: usize, mut to: usize, text: &str) {
+    fn event(&mut self, day: usize, mut from: Time, mut to: Time, text: &str) {
         // Hours are set in 12 am/pm format, but without the am/pm indication
-        if from < 8 {
-            from += 12;
+        if from.hours < 8 {
+            from.hours += 12;
         }
-        if to < 8 {
-            to += 12;
+        if to.hours < 8 {
+            to.hours += 12;
         }
         self.events.push(Event::Timed { day, from, to, text: text.to_owned() })
     }
@@ -169,6 +177,13 @@ fn get_day_number(elt: &Node) -> Option<usize> {
     Some(txt.trim().parse().unwrap())
 }
 
+fn parse_time(time: &str) -> Time {
+    match time.split_once(':') {
+        None => Time { hours: time.parse().unwrap(), minutes: 0 },
+        Some((hours, minutes)) => Time { hours: hours.parse().unwrap(), minutes: minutes.parse().unwrap() },
+    }
+}
+
 // Returns the number of the parsed day, if applicable
 fn parse_cell(res: &mut MonthResult, cell: &scraper::ElementRef<'_>) -> Option<usize> {
     let mut children = cell.children();
@@ -199,9 +214,9 @@ fn parse_cell(res: &mut MonthResult, cell: &scraper::ElementRef<'_>) -> Option<u
                 }
                 match txt.split_once(' ') {
                     None => res.full_day_event(day_num, txt),
-                    Some((time, rem)) => match time.split_once('-') {
+                    Some((time, rem)) => match time.split_once(&['-', '~']) {
                         None => res.full_day_event(day_num, txt),
-                        Some((from, to)) => res.event(day_num, from.parse().unwrap(), to.parse().unwrap(), rem),
+                        Some((from, to)) => res.event(day_num, parse_time(from), parse_time(to), rem),
                     }
                 }
             }

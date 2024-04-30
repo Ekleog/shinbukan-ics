@@ -9,8 +9,14 @@ MonthResult {
     events: [
         Timed {
             day: 1,
-            from: 13,
-            to: 17,
+            from: Time {
+                hours: 13,
+                minutes: 0,
+            },
+            to: Time {
+                hours: 17,
+                minutes: 0,
+            },
             text: "上板橋",
         },
         FullDay {
@@ -39,8 +45,14 @@ MonthResult {
         },
         Timed {
             day: 7,
-            from: 13,
-            to: 17,
+            from: Time {
+                hours: 13,
+                minutes: 0,
+            },
+            to: Time {
+                hours: 17,
+                minutes: 0,
+            },
             text: "丹波 柔道場/自主稽古",
         },
         FullDay {
@@ -65,8 +77,14 @@ MonthResult {
         },
         Timed {
             day: 14,
-            from: 13,
-            to: 17,
+            from: Time {
+                hours: 13,
+                minutes: 0,
+            },
+            to: Time {
+                hours: 17,
+                minutes: 0,
+            },
             text: "鳴尾浜 柔道場/自主稽古",
         },
         FullDay {
@@ -75,44 +93,86 @@ MonthResult {
         },
         Timed {
             day: 15,
-            from: 13,
-            to: 17,
+            from: Time {
+                hours: 13,
+                minutes: 0,
+            },
+            to: Time {
+                hours: 17,
+                minutes: 0,
+            },
             text: "上板橋（自主稽古）",
         },
         Timed {
             day: 18,
-            from: 15,
-            to: 17,
+            from: Time {
+                hours: 15,
+                minutes: 0,
+            },
+            to: Time {
+                hours: 17,
+                minutes: 0,
+            },
             text: "大宮武道館(2F半面)",
         },
         Timed {
             day: 20,
-            from: 13,
-            to: 15,
+            from: Time {
+                hours: 13,
+                minutes: 0,
+            },
+            to: Time {
+                hours: 15,
+                minutes: 0,
+            },
             text: "大宮武道館(2F)",
         },
         Timed {
             day: 21,
-            from: 13,
-            to: 17,
+            from: Time {
+                hours: 13,
+                minutes: 0,
+            },
+            to: Time {
+                hours: 17,
+                minutes: 0,
+            },
             text: "鳴尾浜 柔道場/自主稽古",
         },
         Timed {
             day: 22,
-            from: 13,
-            to: 17,
+            from: Time {
+                hours: 13,
+                minutes: 0,
+            },
+            to: Time {
+                hours: 17,
+                minutes: 0,
+            },
             text: "上板橋",
         },
         Timed {
             day: 28,
-            from: 9,
-            to: 17,
+            from: Time {
+                hours: 9,
+                minutes: 0,
+            },
+            to: Time {
+                hours: 17,
+                minutes: 0,
+            },
             text: "鳴尾浜 柔道場 本稽古",
         },
         Timed {
             day: 29,
-            from: 13,
-            to: 17,
+            from: Time {
+                hours: 13,
+                minutes: 0,
+            },
+            to: Time {
+                hours: 17,
+                minutes: 0,
+            },
             text: "上板橋",
         },
     ],
