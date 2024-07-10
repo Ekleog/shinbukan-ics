@@ -4,7 +4,13 @@ use futures::StreamExt;
 use scraper::Node;
 use std::hash::{Hash, Hasher};
 
-const NUM_MONTHS: u32 = 15; // 2 months of "going back", plus one year, plus one month
+const NUM_MONTHS: u32 = 14; // 2 months of "going back", plus one year
+
+fn url_for(year: usize, month: usize) -> String {
+    let user = std::env::var("REMOTEUSER").expect("REMOTEUSER must be configured");
+    let pass = std::env::var("REMOTEPASS").expect("REMOTEPASS must be configured");
+    format!("http://{user}:{pass}@brionac.s17.xrea.com/schedule/homepage/homepage/calendar/{year}/{year}{month:02}.html")
+}
 
 #[derive(Debug, Hash)]
 struct Time {
@@ -67,6 +73,7 @@ impl Event {
         #[cfg(test)]
         let now = "20000101T000000Z";
 
+        let url = url_for(year, month);
         format!(
             "BEGIN:VEVENT\n\
              UID:{hash}@shinbukan-ics\n\
@@ -74,7 +81,7 @@ impl Event {
              {start}\n\
              {end}\n\
              SUMMARY:{text}\n\
-             URL:http://brionac.s17.xrea.com/schedule/homepage/homepage/calendar/{year}/{year}{month:02}.html\n\
+             URL:{url}\n\
              END:VEVENT\n"
         )
     }
@@ -142,7 +149,7 @@ impl MonthResult {
 }
 
 async fn fetch_calendar_for(year: usize, month: usize) -> anyhow::Result<String> {
-    let url = format!("http://brionac.s17.xrea.com/schedule/homepage/homepage/calendar/{year}/{year}{month:02}.html");
+    let url = url_for(year, month);
     tracing::debug!(%url, "fetching calendar page");
     let resp = reqwest::get(url).await?;
     let bytes = resp.bytes().await?;
